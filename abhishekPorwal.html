@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo List || CB Assignment</title>
+    <link rel="stylesheet" href="abhishekPorwal.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>TODO LIST</h1>
+        <div class="insideForm">
+            <input type="text" placeholder="Enter Todo...." onkeydown="enterTodo(event)" id="ourTodo">
+            <button onclick="handleSubmit()">Add</button>
+        </div>
+        <div class="allTodos">
+            <ul id="todoUL">
+
+            </ul>
+        </div>
+    </div>
+    <script>
+        function handleSubmit() {
+            var todo = document.getElementById('ourTodo');
+            var todoText = todo.value;
+            if (todoText.trim() !== '') {
+                var taskList = document.getElementById('todoUL');
+                var li = document.createElement('li');
+
+                li.innerHTML = `
+        <input type="checkbox" onclick="updateCheck(this)">
+        <span class="task">${todoText}</span>
+        <span class="buttons">
+        <i class="fa-solid fa-arrow-up" onclick="up(this.parentNode.parentNode)" class="up-button"></i>
+          <i class="fa-solid fa-trash" onclick="deleteItem(this.parentNode.parentNode)" class="delete-button"></i>
+          <i class="fa-solid fa-arrow-down" onclick="down(this.parentNode.parentNode)" class="down-button"></i> 
+        </span>
+      `;
+                taskList.appendChild(li);
+                todo.value = "";
+            }
+        }
+
+        function updateCheck(checkbox) {
+            var item = checkbox.parentNode;
+            item.classList.toggle('checked');
+            var taskList = document.getElementById('todoUL');
+            taskList.appendChild(item);
+
+        }
+        function up(item) {
+            var prevItem = item.previousElementSibling;
+            if (prevItem) {
+                item.parentNode.insertBefore(item, prevItem);
+            }
+        }
+        function down(item) {
+            var nextItem = item.nextElementSibling;
+            if (nextItem) {
+                item.parentNode.insertBefore(nextItem, item);
+            }
+        }
+        function deleteItem(item) {
+            var taskText = item.querySelector('.task');
+            taskText.innerText = 'Item Deleted';
+            item.classList.add('delete-animation');
+            item.parentNode.removeChild(item);
+        }
+
+        function enterTodo(event) {
+            if (event.which === 13) {
+                handleSubmit();
+            }
+        }
+    </script>
+    <script src="https://kit.fontawesome.com/32b1515d91.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

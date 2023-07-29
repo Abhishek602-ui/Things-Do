@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Fasthand&family=Poppins:ital,wght@0,300;0,400;0,500;1,400&family=Sen:wght@800&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: 'Poppins' , sans-serif;
+}
+.container{
+    /* background-color: aquamarine; */
+    width: 70vw;
+    border: 1px solid black;
+    margin: 0 auto;
+}
+.container h1{
+    color: rgb(34, 45, 90);
+    font-weight: 700;
+    font-size: 3rem;
+    text-align: center;
+}
+
+/* .container input{
+    width: 90%;
+    margin-left: 4em;
+    border: none;
+    outline:none;
+    border-bottom: 2px solid rgb(0, 0, 0);
+    font-size:x-large;
+    margin-top: 2em;
+
+} */
+
+.insideForm input{
+    /* width: 70%; */
+    width: 70%;
+    /* height: 20%; */
+    margin-left: 4em;
+    border: none;
+    outline:none;
+    border-bottom: 2px solid rgb(0, 0, 0);
+    font-size:x-large;
+    margin-top: 2em;
+    /* margin-bottom: 0px; */
+}
+.insideForm button{
+    background-color: rgb(15, 10, 53);
+    color: aliceblue;
+    height:3rem;
+    width: 5rem;
+    border-radius: 10px;
+    font-size: large;
+    font-weight: 800;
+    box-shadow: 2px 5px #aaaaaa42;
+    
+    /* margin-bottom: 50px; */
+}
+.insideForm button:hover{
+    transition: all 0.01s ease-in 0s;
+    background-color: rgba(15, 10, 53, 0.669)
+}
+
+ul li{
+    list-style: none;
+
+}
+
+li{
+    font-size: x-large;
+    margin: 1rem 0;
+}
+li input{
+    margin-right: 35px;
+    transform: scale(200%);
+    margin-left: 5rem;
+}
+li.checked {
+    text-decoration: line-through;
+  }
+
+li .buttons{
+    float: right;
+    margin: 0 6em;
+}
+
+i{
+    margin: 0 10px;
+}
